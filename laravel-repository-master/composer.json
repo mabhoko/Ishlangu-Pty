@@ -1,0 +1,50 @@
+{
+    "name": "czim/laravel-repository",
+    "description": "Repository for Laravel (inspired by and indebted to Bosnadev/Repositories)",
+    "keywords": [
+        "laravel",
+        "repository",
+        "repositories",
+        "eloquent",
+        "database",
+        "criteria"
+    ],
+    "homepage": "https://github.com/czim/laravel-repository",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Coen Zimmerman",
+            "email": "coen@pxlwidgets.com",
+            "homepage": "http://www.pixelindustries.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php" : ">=7.1.3",
+        "illuminate/support": "^6.0",
+        "illuminate/database": "^6.0",
+        "myclabs/php-enum": "^1.7"
+    },
+    "require-dev": {
+        "phpunit/phpunit" : "^7.0|^8.0",
+        "orchestra/testbench": "^4.0",
+        "watson/rememberable": "dev-master",
+        "astrotomic/laravel-translatable": "^11.5",
+        "czim/laravel-listify": "~1.1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Czim\\Repository\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Czim\\Repository\\Test\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "phpunit"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
