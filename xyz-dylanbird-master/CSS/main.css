@@ -1,0 +1,395 @@
+/*----------------------------------------------------------------------------*/
+/*GLOBAL STYLES*/
+/*----------------------------------------------------------------------------*/
+html {
+  background-color: #000;
+}
+body {
+  display: flex;
+  flex-direction: column; /*header, content, footer vertically stacked*/
+  min-height: 100vh;
+}
+h1  { 
+  font-weight: 700;
+  font-size: 2.0rem;
+  line-height: 1.2; 
+  color: #fff; /*white*/
+}
+h1 > a {
+  text-decoration: none;
+}
+h2 { 
+  font-weight: 700;
+  font-size: 2.0rem;
+  color: pink;
+  line-height: 1.2; 
+}
+h3 { 
+  font-weight: 1000;
+  line-height: 1.2;
+  color: rgba(255, 192, 203, 83%);  /*transparent pink, to match the text*/
+}
+h4 {
+  color: #fff;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+p {
+  font-weight: 400;
+  font-size: 1.0rem;
+  line-height: 1.5; 
+  color: hsl(000, 000%, 083%);
+  margin-bottom: 1.0rem;
+}
+code {
+  color: blue;
+  background: hsl(000, 000%, 083%);
+}
+img {
+  width: 100%;
+}
+figcaption {
+  display: flex;
+  justify-content: center;    
+}
+/*----------------------------------------------------------------------------*/
+/*HEADER STYLES*/
+/*----------------------------------------------------------------------------*/
+.header {
+  background-color: hsl(0, 0%, 25%); /* dark grey */
+  color: #000;
+  position: fixed;
+  width: 100%;
+  z-index: 20; /*creates layers*/
+  margin-bottom: 20px;
+}
+.header h1 {
+  color: #fff; /*white*/
+  float: left;
+  font-size: 1.75rem;
+  font-weight: bold;
+  padding: 3vh 60px 3vh 60px;
+  position: relative;
+}
+.header h1 > a {
+  color: #fff;
+}
+.header h1:hover,
+.header h1:active {
+  font-style: italic;
+}
+.header-nav {
+  float: right;
+  padding: 3vh 60px 3vh 0;
+  position: relative;
+}
+.header-nav > li {
+  background-color: hsl(0, 0%, 50%); /* light grey */
+  border-radius: 10px;
+  color: #000; /*black*/
+  display: inline-block;
+  font-size: 0.8rem;
+  margin-left: 0.5em;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none; /*stops global style underline of links*/
+  text-transform: lowercase;
+  font-weight: bold;
+  width: 60px;
+}
+.header-nav > li:hover,
+.header-nav > li:active {
+  background-color: pink; /*pink*/
+  color: #fff; /*white*/
+}
+/*----------------------------------------------------------------------------*/
+/*FOOTER STYLES*/
+/*----------------------------------------------------------------------------*/
+.footer {
+  background-color: hsl(0, 0%, 25%);
+  padding: 5vh 0 3vh;
+  text-align: center;
+  position: relative;
+}
+.footer h3 {
+  color: #fff;
+  padding-top: 1.5em;
+  text-transform: uppercase;
+}
+.footer h3 span {
+  color: #fff;
+}
+.footer-nav li {
+  color: #fff;
+  display: inline-block;
+  margin: 2em 1em 0;
+}
+.footer-nav li:hover,
+.footer-nav li:active {
+  color: pink;
+}
+/*----------------------------------------------------------------------------*/
+/*SOCIAL STYLES*/
+/*----------------------------------------------------------------------------*/
+.social-link {
+  background: rgba(150, 150, 150, 0.5);
+  border-radius: 99px;
+  box-sizing: border-box;
+  display: inline-box;
+  height: 3.0em;
+  padding-top: 0.47em;
+  vertical-align: middle;
+  width: 3.0em;
+}
+.social-icon {
+  display: inline-block;
+  vertical-align: center;
+  justify-content: center;
+}
+.social-icon img {
+  filter: brightness(0%);
+  max-width: 70%;
+}
+.social-link:hover,
+.social-link:active {
+  background: white;
+}
+.social-icon img:hover,
+.social-icon img:active {
+  filter: brightness(100%)
+}
+.social-list {
+  list-style: none;
+  padding: 0;
+  text-align: center;
+}
+.social-list > li {
+  display: inline-block;
+  margin: 0 0.5em;
+}
+/*----------------------------------------------------------------------------*/
+/*SPLASH STYLES*/
+/*----------------------------------------------------------------------------*/
+.full-splash {
+  background-color: hsl(0, 0%, 0%);  /*black*/
+  background-size: cover;
+  box-sizing: border-box;
+  height: 100vh;
+  padding-top: 10vh;
+}
+/*code for a triangle down-pointer*/
+/*.full-splash:after {
+  bottom: 2vh;
+  border: 10px solid;
+  border-color: #fff transparent transparent;
+  content: "";
+  height: 0;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%, 0);
+  width: 0;
+}*/
+.splash-home {
+  background-color: black; /*if image doesn't load*/
+  background-image: url('../images/dbl-rot-tesseract2.gif');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 150vh;
+}
+.splash-content {
+  color: #fff;
+  position: relative;
+  text-align: center;
+  top: 50%;
+  transform: translate(0, -50%);
+}
+.splash-content h1 {
+  color: rgba(255, 192, 203, 80%); /*CSS pink, but transparent*/
+  font-size: 7vw;
+  margin-bottom: 0.25em;
+}
+/*----------------------------------------------------------------------------*/
+/*LAYOUT STYLES*/
+/*----------------------------------------------------------------------------*/
+.content-container {
+  display: flex;
+  flex: 1 1 auto; /*shorthand => flex-grow flex-shrink flex-basis*/
+  padding-top: 15vh;
+  width: 100%;
+}
+.col-two {
+  display: flex;
+}
+.col-two .col-aside {
+  flex: 0 0 20em;
+  order: 1;
+}
+.col-two .col-content {
+  flex: 1;
+}
+/*----------------------------------------------------------------------------*/
+/*PAGES STYLES*/
+/*----------------------------------------------------------------------------*/
+.page {
+  margin: 10vh auto 15vh;
+  max-width: 980px;
+  width: 85vw;
+}
+.page h1 {
+  font-size: 3em;
+  margin-bottom: 1em;
+  text-align: center;
+}
+.page h2 {
+  margin-bottom: 0.5em;
+}
+.page h4 {
+  margin-bottom: 1em;
+}
+.page a {
+  color: pink;
+  font-weight: 550;
+}
+.page a:hover,
+.page a:active {
+  text-decoration: pink underline dashed;
+}
+/*----------------------------------------------------------------------------*/
+/*BLOG STYLES*/
+/*----------------------------------------------------------------------------*/
+.blog-recent {
+  text-align: right;
+}
+.blog-recent > h4 ~ h4 {
+  margin-top: 2em;
+}
+.blog-title-list {
+  list-style: none;
+  padding: 0;
+  color: white;
+}
+.blog-title-list li ~ li {
+  margin-top: 1.5em;
+}
+.blog-title-list a {
+  color: pink;
+}
+.blog-title-list span {
+  display: block;
+  font-size: 0.8em;
+  font-style: italic;
+  margin-top: 0.5em;
+}
+.blog-posts:not(:first-child) {
+  border-top: 2px dashed white;
+  margin-top: 1em;
+  padding-top: 1.5em;
+}
+.blog-posts .post-header {
+  font-size: 0.8rem;
+}
+.post-header {
+  margin-bottom: 1.5em;
+}
+.post-header .post-date-time {
+  color: white;
+  font-style: bold;
+  text-transform: uppercase;
+}
+.blog-previews {
+  display: flex;
+  flex-direction: column;
+}
+.blog-content > ul {
+  color: hsl(000, 000%, 083%);
+  font-size: 1.0em;
+  list-style-type: circle;
+  margin-left: 2rem;
+}
+/*----------------------------------------------------------------------------*/
+/*MOBILE/RESPONSIVE STYLES*/
+/*----------------------------------------------------------------------------*/
+@media (max-width: 900px) {
+  /* HEADER STYLES */
+  .header h1 {
+    padding: 1vh 0 0.5vh 1rem;
+  }
+  .header-nav {
+    float: right;
+    margin-right: 1rem;
+    padding: 1vh 1vh 1vh 1vh;
+  }
+  /* BLOG STYLES */
+  .blog-recent {
+    display: none;
+  }
+}
+@media (max-width: 450px) {
+  /*GLOBAL STYLES*/
+  h1  { 
+    font-size: 1.5rem;
+    line-height: 0.8; 
+    color: #fff; /*white*/
+  }
+  h2 {
+    font-size: 1.5rem;
+    line-height: 0.8; 
+  }
+  h3 {
+    font-size: 0.8rem
+    line-height: 1.2;
+  }
+  p {
+    font-weight: 400;
+    font-size: 0.8rem;
+    line-height: 1.2; 
+    margin-bottom: 1.0rem;
+  }
+  code {
+    font-size: 0.8rem;
+  }
+  /*SPLASH STYLES*/
+  .splash-home {
+    background-size: 80vh;
+  }
+  /* HEADER STYLES */
+  .header h1 a {
+    display: none;
+  }
+  .header-nav {
+    float: left;
+    margin-left: 3vh;
+  }
+  .header-nav > li {
+    padding: 1vh 0;
+    width: 15vw;
+  }
+  .header-nav a {
+    float: none;
+    display: inline-block;
+    font-size: 4.0vw;
+  }
+  /* FOOTER STYLES */
+  .footer {
+    padding: 5vh 0 3vh;
+  }
+  .footer-nav {
+    margin: 0 2vh 0; 
+    font-size: 4.0vw;
+  }
+  /* SOCIAL STYLES*/
+  .social-icon {
+    height: 8vh;
+    width: 8vh;
+    border-radius: 99px;
+  }
+  .social-icon img {
+    filter: brightness(0%);
+    max-width: 60%;
+  }
+  /*BLOG STYLES*/ 
+  .blog-content > ul {
+    font-size: 0.8rem;
+    margin-left: 1.0rem;
+  }
+}
